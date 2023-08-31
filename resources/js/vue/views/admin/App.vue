@@ -1,5 +1,5 @@
 <template>
-  Заглушка
+  Заглушка для админки
 </template>
 
 <script>
