@@ -27,7 +27,7 @@ Route::get('/info', function () {
 
 Route::get('/profile', function () {
     return view('profile.index');
-})->middleware('auth');
+})->middleware('auth:sanctum');
 
 Route::get('/profile/login', function () {
     return view('profile.login');
