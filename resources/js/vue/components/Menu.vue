@@ -19,5 +19,9 @@ export default {
 </script>
 
 <style scoped>
-
+.menu-container, .menu{
+  border: solid 1px black;
+  padding: 5px;
+  margin: 5px;
+}
 </style>
