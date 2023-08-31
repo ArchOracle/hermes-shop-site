@@ -27,7 +27,15 @@ Route::get('/info', function () {
 
 Route::get('/profile', function () {
     return view('profile.index');
-});
+})->middleware('auth');
+
+Route::get('/profile/login', function () {
+    return view('profile.login');
+})->name('login');
+
+Route::get('/profile/register', function () {
+    return view('profile.register');
+})->name('register');
 
 Route::get('/admin', function () {
     return view('admin.index');
