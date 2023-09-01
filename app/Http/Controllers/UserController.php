@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\User;
 use Illuminate\Http\Request;
 
 class UserController extends Controller
@@ -27,7 +28,25 @@ class UserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+		$content = [
+			'success' => true
+		];
+		$rc = json_decode($request->getContent(), true);
+		$data = [
+			'register' => [
+				'name' => $rc['register']['registerName'],
+				'email' => $rc['register']['registerEmail'],
+				'password' => $rc['register']['registerPassword'],
+			]
+		];
+		$content['data'] = $data;
+		$user = User::query()->create([
+			'name' => $data['register']['name'],
+			'email' => $data['register']['email'],
+			'password' => $data['register']['password'],
+		]);
+		$user->save();
+	    return response(json_encode($content));
     }
 
     /**
