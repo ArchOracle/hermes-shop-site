@@ -1,7 +1,45 @@
 <template>
   <Header></Header>
   <div class="content">
-    Страница регистрации
+    <div class="register_title">
+      Страница регистрации
+    </div>
+    <div class="register_error" style="display: none">
+      Error
+    </div>
+    <div class="register_success" style="display: none">
+      Success
+    </div>
+    <div class="register_field">
+      <div class="register_field-name">Name</div>
+      <div class="register_field-value">
+        <input type="text" class="register_name">
+      </div>
+    </div>
+    <div class="register_field">
+      <div class="register_field-name">Email</div>
+      <div class="register_field-value">
+        <input type="text" class="register_email">
+      </div>
+    </div>
+    <div class="register_field">
+      <div class="register_field-name">Password</div>
+      <div class="register_field-value">
+        <input type="password" class="register_password">
+      </div>
+    </div>
+    <div class="register_field">
+      <div class="register_field-name">Confirm password</div>
+      <div class="register_field-value">
+        <input type="password" class="register_password">
+      </div>
+    </div>
+    <div class="register_div_button_center">
+      <button class="register_button_change-date">Зарегистрироваться</button>
+    </div>
+    <div class="register_link_login">
+      <a href="/profile/login">Войти</a>
+    </div>
   </div>
   <Footer></Footer>
 </template>
@@ -20,6 +58,53 @@ export default {
 .content {
   min-height: 600px;
   border: solid 1px black;
-  margin: 10px;
+  width: 800px;
+  margin: auto;
+}
+
+.register_field {
+  display: flex;
+  margin: 20px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.register_title {
+  display: flex;
+  margin: 20px;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.register_div_button_center {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+.register_link_login {
+  display: flex;
+  justify-content: space-around;
+  margin: 20px;
+}
+
+
+.register_error {
+  background-color: red;
+  color: white;
+  display: flex;
+  margin: 5px;
+  padding: 5px;
+  font-size: 12pt;
+  justify-content: space-around;
+}
+
+.register_success {
+  background-color: #00ff00;
+  display: flex;
+  margin: 5px;
+  padding: 5px;
+  font-size: 12pt;
+  justify-content: space-around;
 }
 </style>
