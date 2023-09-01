@@ -13,29 +13,29 @@
     <div class="register_field">
       <div class="register_field-name">Name</div>
       <div class="register_field-value">
-        <input type="text" class="register_name">
+        <input v-model="registerName" type="text" class="register_name">
       </div>
     </div>
     <div class="register_field">
       <div class="register_field-name">Email</div>
       <div class="register_field-value">
-        <input type="text" class="register_email">
+        <input v-model="registerEmail" type="text" class="register_email">
       </div>
     </div>
     <div class="register_field">
       <div class="register_field-name">Password</div>
       <div class="register_field-value">
-        <input type="password" class="register_password">
+        <input v-model="registerPassword" type="password" class="register_password">
       </div>
     </div>
     <div class="register_field">
       <div class="register_field-name">Confirm password</div>
       <div class="register_field-value">
-        <input type="password" class="register_password">
+        <input v-model="registerPasswordConfirm" type="password" class="register_confirm_password">
       </div>
     </div>
     <div class="register_div_button_center">
-      <button class="register_button_change-date">Зарегистрироваться</button>
+      <button @click="register" class="register_button_change-date">Зарегистрироваться</button>
     </div>
     <div class="register_link_login">
       <a href="/profile/login">Войти</a>
@@ -49,7 +49,34 @@ import Header from "/resources/js/vue/components/Header.vue";
 import Footer from "/resources/js/vue/components/Footer.vue";
 export default {
   name: "App.vue",
-  components: {Header, Footer}
+  components: {Header, Footer},
+  data() {
+    return {
+      registerName: '',
+      registerEmail: '',
+      registerPassword: '',
+      registerPasswordConfirm: '',
+    }
+  },
+  methods: {
+    register() {
+      fetch('/api/user/register', {
+        method: 'POST',
+        body: JSON.stringify({
+          register: {
+            registerName: this.$data.registerName,
+            registerEmail: this.$data.registerEmail,
+            registerPassword: this.$data.registerPassword,
+            registerPasswordConfirm: this.$data.registerPasswordConfirm,
+          }
+        })
+      }).then((response) => {
+        console.log(response.json())
+      }, (reject) => {
+
+      })
+    }
+  }
 }
 </script>
 
