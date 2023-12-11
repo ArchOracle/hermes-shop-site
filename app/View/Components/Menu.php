@@ -8,12 +8,15 @@ use Illuminate\View\Component;
 
 class Menu extends Component
 {
+	private string $type;
+	private array $elementList;
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public function __construct($type = 'horizontal', $elementList = ['Main' => '/', 'Catalog' => '/catalog', 'Info' => '/info'])
     {
-        //
+        $this->type = $type;
+		$this->elementList = $elementList;
     }
 
     /**
@@ -21,6 +24,6 @@ class Menu extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.menu');
+        return view('components.menu.' . $this->type, ['elementList' => $this->elementList]);
     }
 }
