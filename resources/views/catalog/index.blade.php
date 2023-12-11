@@ -3,10 +3,7 @@
 <head>
     <title>Hermes</title>
 
-    @vite('resources/css/app.css')
 </head>
 <body>
-<div id="app"></div>
-@vite('resources/js/views/catalog/app.js')
 </body>
 </html>
