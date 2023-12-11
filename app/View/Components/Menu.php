@@ -26,4 +26,9 @@ class Menu extends Component
     {
         return view('components.menu.' . $this->type, ['elementList' => $this->elementList]);
     }
+
+	public function isSelectedElement($elementName): false
+	{
+		return false;
+	}
 }
