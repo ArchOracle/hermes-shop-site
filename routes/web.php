@@ -14,29 +14,29 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('index');
+    return view('pages.index');
 });
 
 Route::get('/catalog', function () {
-    return view('catalog.index');
+    return view('pages.catalog.index');
 });
 
 Route::get('/info', function () {
-    return view('info.index');
+    return view('pages.info.index');
 });
 
 Route::get('/profile', function () {
-    return view('profile.index');
+    return view('pages.profile.index');
 })->middleware('auth:sanctum');
 
 Route::get('/profile/login', function () {
-    return view('profile.login');
+    return view('pages.profile.login');
 })->name('login');
 
 Route::get('/profile/register', function () {
-    return view('profile.register');
+    return view('pages.profile.register');
 })->name('register');
 
 Route::get('/admin', function () {
-    return view('admin.index');
+    return view('pages.admin.index');
 });
