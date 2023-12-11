@@ -4,5 +4,7 @@
     <title>Hermes</title>
 </head>
 <body>
+<x-header></x-header>
+<x-footer></x-footer>
 </body>
 </html>
