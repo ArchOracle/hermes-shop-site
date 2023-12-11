@@ -1,10 +1,10 @@
-<div>
+<div class="menu menu_horizontal">
     <div>Menu</div>
     <div>Type: horizontal</div>
-    <div>
+    <div class="menu__list menu__list_horizontal">
         <ul>
             @foreach($elementList as $elementName => $elementLink)
-                <li>
+                <li class="menu__element">
                     <a href="{{$elementLink}}">{{$elementName}}</a>
                 </li>
             @endforeach
